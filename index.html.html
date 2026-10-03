@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .con {
+            min-height: 900px;
+            background: rgb(161, 161, 134);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 70px;
+            box-sizing: border-box;
+            padding-top: 40px;
+            padding-bottom: 50px;
+
+        }
+
+        .top-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .square {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+
+        .s1 {
+            background: #a8d172;
+            animation-name: colour;
+        }
+
+        @keyframes colour {
+            Form {
+                background: #d17272;
+            }
+
+            to {
+                background: rgb(89, 17, 184);
+            }
+
+        }
+
+        .s2 {
+            background: rgb(223, 69, 161);
+            animation-name: move;
+        }
+
+        @keyframes move {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(0, 50px);
+            }
+        }
+
+        .s3 {
+            animation-name: pulse;
+            background: rgb(218, 198, 147);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.5);
+            }
+        }
+
+        .s4 {
+            animation-name: rotate;
+            background: cyan;
+        }
+
+        @keyframes rotate {
+
+            0%,
+            100% {
+                rotate: 0;
+            }
+
+            50% {
+                rotate: 360deg;
+            }
+        }
+
+        .s5 {
+            animation-name: fade;
+            background: rgb(187, 123, 123);
+        }
+
+        @keyframes fade {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .s6 {
+            border: 10px solid white;
+            border-top: 10px solid black;
+
+            border-radius: 50%;
+            animation-name: buffer;
+
+        }
+
+        @keyframes buffer {
+
+            0%,
+            100% {
+                rotate: 1;
+            }
+
+            50% {
+                rotate: 360deg;
+            }
+
+        }
+
+        .big-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .animation-box {
+            width: 500px;
+            height: 320px;
+            bottom: 1px solid black;
+            position: relative;
+            border: 1px solid black;
+
+        }
+
+        .moving-square {
+            width: 70px;
+            height: 70px;
+            background: rgb(13, 168, 168);
+            position: absolute;
+            animation: bordermove 4s linear infinite;
+        }
+
+        @keyframes bordermove {
+            0% {
+                left: 0;
+                top: 0;
+            }
+
+            25% {
+                left: calc(100% - 70px);
+                top: 0;
+            }
+
+            50% {
+                left: calc(100% - 70px);
+                top: calc(100% - 70px);
+            }
+
+            75% {
+                left: 0;
+                top: calc(100% - 70px);
+            }
+
+            100% {
+                left: 0;
+                top: 0;
+            }
+
+        }
+
+        .voice-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .ball {
+            width: 35px;
+            height: 35px;
+            background: blue;
+            border-radius: 50%;
+            animation: voice 2s ease-in-out infinite;
+        }
+
+        .ball :nth-child(1) {
+            animation-delay: 0s;
+            background: blue;
+        }
+
+        .ball :nth-child(2) {
+            animation-delay: 0.15s;
+            background: red;
+            background-color: red;
+
+
+        }
+
+        .ball :nth-child(3) {
+            animation-delay: 0.30s;
+            background: yellow;
+            background-color: yellow;
+
+
+        }
+
+        .ball :nth-child(4) {
+            animation-delay: 0.45s;
+            background: green;
+            background-color: green;
+
+
+        }
+
+        .ball :nth-child(5) {
+            animation-delay: 0.60s;
+            background: blue;
+
+
+        }
+
+        @keyframes voice {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-60px);
+            }
+        }
+
+        .b1 {
+            background-color: red;
+            animation-delay: 0s;
+        }
+
+        .b2 {
+            background-color: orange;
+            animation-delay: 0.15s;
+        }
+
+        .b3 {
+            background-color: yellow;
+            animation-delay: 0.30s;
+        }
+
+        .b4 {
+            background-color: green;
+            animation-delay: 0.45s;
+        }
+
+        .b5 {
+            background-color: blue;
+            animation-delay: 0.60s;
+        }
+
+        .h1 {
+            text-align: center;
+            font-size: 44px;
+        }
+
+        h2 {
+            right: 1000px;
+            margin-right: 500px;
+
+        }
+
+        h3 {
+            right: 600px;
+            margin-right: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="con">
+        <h1>CSS Animation Examples</h1>
+        <div class="top-boxes">
+            <div class="square s1">colour</div>
+            <div class="square s2">move</div>
+            <div class="square s3">pulse</div>
+            <div class="square s4">rotate</div>
+            <div class="square s5">fade</div>
+            <div class="square s6">buffer</div>
+        </div>
+        <h2>Square Path Animation</h2>
+        <div class="big-boxes">
+            <div class="animation-box">
+                <div class="moving-square"></div>
+
+            </div>
+            <div class="animation-box voice-box">
+                <div class="ball b1"></div>
+                <div class="ball b2"></div>
+                <div class="ball b3"></div>
+                <div class="ball b4"></div>
+                <div class="ball b5"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
